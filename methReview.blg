@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: methReview.aux
+The style file: cell.bst
+Illegal, another \bibstyle command---line 6 of file methReview.aux
+ : \bibstyle
+ :          {model1-num-names}
+I'm skipping whatever remains of this command
+Database file #1: methReview.bib
+You've used 3 entries,
+            2116 wiz_defined-function locations,
+            529 strings with 4688 characters,
+and the built_in function-call counts, 1372 in all, are:
+= -- 140
+> -- 73
+< -- 2
++ -- 26
+- -- 26
+* -- 140
+:= -- 228
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 19
+chr.to.int$ -- 3
+cite$ -- 12
+duplicate$ -- 36
+empty$ -- 82
+format.name$ -- 31
+if$ -- 262
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 3
+newline$ -- 18
+num.names$ -- 9
+pop$ -- 17
+preamble$ -- 1
+purify$ -- 22
+quote$ -- 0
+skip$ -- 33
+stack$ -- 0
+substring$ -- 102
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 18
+warning$ -- 0
+while$ -- 12
+width$ -- 0
+write$ -- 41
+(There was 1 error message)

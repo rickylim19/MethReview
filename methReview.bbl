@@ -1,0 +1,21 @@
+\begin{thebibliography}{}
+
+\bibitem[Bartolomei and Tilghman, 1997]{Bartolomei1997Genomicimprintingin}
+Bartolomei, M.~S. and Tilghman, S.~M. (1997{\rm{}}).
+\newblock Genomic imprinting in mammals.
+\newblock {\rm Annual review of genetics } \emph{31}, 493--525.
+
+\bibitem[Jones, 2012]{Jones2012FunctionsDNAmethylation}
+Jones, P.~A. (2012{\rm{}}).
+\newblock Functions of DNA methylation: islands, start sites, gene bodies and
+  beyond.
+\newblock {\rm Nature Reviews Genetics } \emph{13}, 484--492.
+
+\bibitem[Smallwood {\rm et~al.}, 2014]{Smallwood2014Singlecellgenome}
+Smallwood, S.~A., Lee, H.~J., Angermueller, C., Krueger, F., Saadeh, H., Peat,
+  J., Andrews, S.~R., Stegle, O., Reik, W.  and Kelsey, G. (2014{\rm{}}).
+\newblock Single-cell genome-wide bisulfite sequencing for assessing epigenetic
+  heterogeneity.
+\newblock {\rm Nature methods } \emph{11}, 817--820.
+
+\end{thebibliography}

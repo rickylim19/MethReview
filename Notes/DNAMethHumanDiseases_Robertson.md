@@ -5,7 +5,6 @@
     - How DNAmeths are being targeted to specific regions?
     (hint: involves the interactions between DNMT and chromatin proteins)
 
-    
     Points:    
 
     - DNAmeth occurs mainly: repetitive regions (satellite & parasitic DNA)
@@ -45,3 +44,6 @@
             - Global: Early in tumorigenesis`->`genomic instability and changes 
             - Gene: Late to adapt with local environment and promote metastasis
         - Hypermethylation on TSG (Tumor Suppresor Gene) 
+    - LOI in cancer 
+        - LOI: aberrant DNAmeth `->` disruption of imprinted epigeneticMarks. 
+        - Among key players: CTCF regulates DNAmeth `->` exp of imprinted gene.
