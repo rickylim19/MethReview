@@ -13,9 +13,9 @@
 %% \documentclass[final,5p,times]{elsarticle}
 %% \documentclass[final,5p,times,twocolumn]{elsarticle}
 
-%% if you use PostScript figures in your article
+%% if you use PostScript  in your article
 %% use the graphics package for simple commands
-%% \usepackage{graphics}
+\usepackage{graphics}
 %% or use the graphicx package for more complicated commands
 %% \usepackage{graphicx}
 %% or use the epsfig package if you prefer to use the old commands
@@ -79,12 +79,11 @@
 %% \address{Address\fnref{label3}}
 %% \fntext[label3]{}
 
-\title{}
+\title{Tuning the DNA methylation measurement resolution to optimize biological knowledge extraction.}
 
 %% use optional labels to link authors explicitly to addresses:
-%% \author[label1,label2]{<author name>}
-%% \address[label1]{<address>}
-%% \address[label2]{<address>}
+\author[label1]{Ricky Lim, Touati Benoukraf}
+\address[label1]{Cancer Science Institute of Singapore, National University of Singapore}
 
 \author{}
 
@@ -96,6 +95,11 @@
 \end{abstract}
 
 \begin{keyword}
+    DNA Methylation \sep
+    bisulfite sequencing \sep
+    gene regulation \sep
+    Chromatin modelling \sep
+
 %% keywords here, in the form: keyword \sep keyword
 
 %% MSC codes here, in the form: \MSC code \sep code
@@ -112,9 +116,143 @@
 
 %% main text
 \section{Introduction}
-lalalla \cite{Smallwood2014Singlecellgenome}
-\cite{Bartolomei1997Genomicimprintingin}
-dsaadssdj \cite{Jones2012FunctionsDNAmethylation}
+
+ Here we mainly discuss DNA methylation in the context of CpG dinucleotides. 
+
+
+\section{Nucleotide Resolutions Required to Analyze Methylation Data in Mammals}
+
+\clearpage
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/methResearch.png}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{| 1 | 1 | 1 |}
+        \hline
+        Biological Insight & Resolution & References \\ \hline
+        %Genomic Imprinting & 1bp - 10,000 bp & \cite{barlow2014genomic}, \cite{bartolomei1993epigenetic}, \cite{stoger1993maternal} \\ \hline
+        Gene activity& 20-2000bp & \cite{busslinger1983dna}, \cite{hodges2011directional}, \cite{amabile2015dissecting} \\ \hline
+        Nucleosome positioning & 20 bp & \cite{kelly2012genome}, \cite{statham2015genome}, \cite{collings2013effects} \\ \hline
+        Transcription factor binding & 1 bp & \cite{kim2003methylation}, \cite{hu2013dna}, \cite{zhu2003methylation} \\ \hline  
+
+    \end{tabular}
+
+\end{center}
+
+
+\clearpage
+
+\subsection{DNA methylation and gene activity}
+
+Early perception about the function of DNA methylation has been linked to gene activity. 
+Such perception described a global negative correlation between DNA methylation and gene expression.
+Hypermethylation at promoter regions has been linked to decreased expression levels of their downstream genes.
+In opposite, reduced global methylation that is triggered by administering 5-Azacytidine could reactive gene expression \cite{Jones2012FunctionsDNAmethylation}, \cite{feinberg2004history}. 
+
+In 1983, gene expression affected by DNA methylation was studied on globin gene using southern blot analysis by Busslinger \textit{et al}.
+This study at the resolution of $\sim$ 1 kb reported that the methylation in the gene region of $\gamma$-globin prevents its expression \cite{busslinger1983dna}. 
+This study has contributed to the perception of the negative correlation between DNA methylation to gene expression.
+
+Hodges, \textit{et al} reported DNA methylation changes during hematopoietic development.
+In their report they applied a sliding-window of 50 bp to average methylation levels across promoters of genes. 
+They reported that the greatest differential methylation among different cell stages during hematopoietic development is observed at $\sim$ 1-2 kb downstream of TSSs within the promoter regions.
+The observed trend is that the overall methylation is selectively reduced in the transcribed genes associated with lineage-specific development.
+Furthermore, they correlated the methylation and expression levels in 100 bp bins.
+In all cell types, they observed a negative correlation between methylation and expressions peaking at $\sim$ 1 kb downstream of TSS \cite{hodges2011directional}.
+
+In 2014 with more systematic approach the preception was challenged by Lou, \textit{et al}. 
+They developed a general model capturing the relationship between DNA methylation and gene expression using whole-genome bisulfite sequencing and RNA sequencing in human cells.
+The DNA methylation and RNA levels of genes were averaged at the resolution of gene length and 2 kb upstream.
+At this resolution, they could systematically deduce a global trend of their relationship.
+They observed a `L-Shape' scatterplot between DNA methylation and RNA gene expression.
+`L-Shape' scatterplot highlights two extreme methylation levels, i.e, high and low levels.
+The high level of methylation is correlated with low level gene expression.
+Whereas the low level of methylation is correlated with high level gene expression.
+This deduced global trend supported the early perception on the function of DNA methylation on gene expression \cite{lou2014whole}. 
+
+% Amabile, et al Dissecting the role of aberrant DNA methylation in human leukaemia
+In 2015, Amabile \textit{et al} studied the function of DNA methylation during leukaemia development.
+In this study, they compared the DNA methylation profiles between the cancer and iPS (induced pluoripotent stem cell)-state cell lines.
+iPS-state cell lines were generated using reprogramming approach by overexpression of OCT4, SOX2, KLF4, and c-MYC.
+At iPS-state, the methylation profile of cancer cell line was defaulted into embryonic-like methylation profile \cite{mikkelsen2008dissecting}.
+Although, iPS-specific methylation profile was also still present, as reported by Huang \textit{et al} \cite{huang2014panel}.
+They compared the mean promoter methylation profiles between the cancer and iPS-state cell lines in 2000bp-window of methylation scores derived from RRBS.
+From such comparison, they identified 500 gene promoters that are hypermethylated in cancer cell line.
+These hypermethylated genes were associated with leukaemia-specific DNA methylation.
+From this study in 2015, by averaging methylation scores in 2000bp-window they could identify differentially methylated promoter regions of genes which are hypermethylated in leukaemia.
+
+%Further analysis characterized that these hypermethylated genes were associated with polycomb binding.
+%Such association may suggest a link between DNA hypermethylation in these regions with gene repression \cite{amabile2015dissecting}. 
+
+\subsection{DNA methylation and nucleosome positioning}
+
+Links between DNA methylation and nucleosomal positioning have been investigated from several studies.
+
+A genome-wide study by Kelly, \textit{et al} in 2012 at the scale of 20 bp-resolution in scoring the methylation level, has provided insight on the links between DNA methylation and nucleosomal positioning.
+In their study, they reported a correlation of DNA methylation and nucleosomal occupancy at promoter regions. 
+Active promoters are characterized by parsed nucleosomes and unmethylated DNA.
+Wherease inactive promoters were marked by densed nucleosomes and unmethylated DNA (poised/repressed gene expression) or methylated DNA (silent gene expression).
+Furthermore, they also observed a anticorrelation between DNA methylation and nucleosomal occupancy at CTCF sites.
+At these sites, DNA methylation level is at its peak in the linker region between nucleosomes. 
+CTCF is being flanked by well-positioned nucleosomes with high level of DNA methylation in between. \cite{kelly2012genome}.
+
+%A more comprehensive bioinformatics study that addresses the links between DNA methylation and nucleosomal occupancy was carried out by Statham, \textit{et al} in 2015 at the scale of 140 bp-resolution.
+%In this study, they compared the profiles of normal and cancer cell lines in breast and prostate investigating nucleosomal depleted regions found in four cancer cell lines. 
+%Furthermore, they also provide the visualization function for aggregating nucleosomal occupancy and CpG methylation profiles \cite{statham2015genome}. 
+
+\subsection{DNA methylation and transcription factor binding}
+
+    DNA methylation may act as a differential binding site for a transcription factor (TF). This role has been reported in several studies.
+
+    A study by Fujimoto, \textit{et al} in 2005, analyzed at the resolution of single CpG dinucleotides from bisulphite genomic sequencing. 
+    From this analysis, they reported the affect of adjacent methylation that blocks the AP-1 site, leads to the reactivation of TrkA gene during cancer progression \cite{fujimoto2005methylation}.
+    At similar single CpG resolution, a study performed by Zhu, \textit{et al} in 2003 could reveal the effect of methylation on adjecent CpG sites on the binding of Sp1/Sp3 in the p21 promoter.
+    The methylation on p21 promoter leads to the inactivation of p21 in human lung cancer, H719 cell line. 
+    This is due to the inhibition promoted by methylation of Sp1 bindings \cite{zhu2003methylation}.
+
+    Methylation studies by Kim, \textit{et al} in 2003 at single-base resolution reported that the presence of a methyl mark may change the binding of TF YY1.
+    YY1 binding sites are differentially methylated between two parental alleles.
+    Within YY1 binding site, one CpG dinucleotide is harboured.
+    The methylation of this CpG occurs maternally, but not paternally, abolishes the binding of YY1.
+    Therefore, a single base change, promoted by the presence of a methyl group could disrupt the binding of YY1 \cite{kim2003methylation}.
+
+    A study by Hu, \textit{et al} in 2013 using systematic protein microarray, has identified 1300 TF in their binding preference to 150 distinct methylated DNA sequences. 
+They carried out bioinformatics analysis at the scale of a single-base.
+With this single-base resoluion, they can reveal the preference of the Transcription factors, among others is KLF4, to the methylated motif sequences \cite{hu2013dna}.
+
+
+\subsection{DNA methylation and genomic imprinting}
+
+    Epigenetic machinery that can mark parental alleles of genes genome-wide is required to establish genomic imprinting.
+One of the machinery that has been widely under investigation is DNA methylation.
+DNA methylation can establish differential parental methylation during gametogenesis by denovo testis or ovary-specific methyltransferase.
+Following gametogenesis, DNA methylation is maintained stably during embyronic division. 
+The maintaince is achived by DNA methyltransferase.
+These DNA methylation acting as a mark is inherited to the next generation independent of sex.
+For this reason, in the germline the sex-specific DNA marks are being erased by active or passive demethylation \cite{barlow2014genomic}.
+
+
+    Imprinted genes work in clusters. 
+A single cluster may harbour 3 up to 12 imprinted genes in the range of 80 - 3700 kb.
+The example of cluster is igf2 clusters. 
+This cluster is involved in the regulation of fetal growth.
+In mouse, H19 is located 90 kb downstream from igf2.
+The differential methylated region (DMR) controlling H19 was identified at 2 kb upstream of H19.
+This DMR is paternally-derived identified with RFLP (Restirction Fragment Length Polymorphism) within the size of $\sim$ 4 kb \cite{bartolomei1993epigenetic}.
+
+    Maternally-inherited DMR has also been identified with the igf2r clusters using RFLP at the resolution \~ 3 kb.
+    This DMR is required for the maternal expression of igf2r \cite{stoger1993maternal}.   
+
+    With higher resolution at base resolution, Xie, \textit{et al} in 2012 could systematically recover the known DMRs and identify more candidate DMRs  (additional 23 DMRs) in mouse brain cells using methylC-seq.
+Additionally, they also reported the occurances of non-CG methylation.
+The methylation scores computed for non-CG methylation, however, at lower resolution.
+They apply average methylation score in 1kb-windows.
+This is due to lower methylation signal for non-CG sites.
+Therefore with lowering the resolution, they could aggregate the methylation score by averaging signals within 1kb-windows. \cite{xie2012base}
+
+
 \label{}
 
 %% The Appendices part is started with the command \appendix;
